@@ -26,6 +26,7 @@ The open-source AI chat app for everyone.
 LibreChat brings together all your AI conversations in one unified, customizable interface
 
 + [LibreChat AI](https://www.librechat.ai/)
+		- [AI Setup](https://www.librechat.ai/docs/configuration/pre_configured_ai)
 
 ## 人工智慧模型
 
@@ -33,7 +34,7 @@ LibreChat brings together all your AI conversations in one unified, customizable
 
 ChatGPT 是由 OpenAI 開發的尖端人工智慧聊天機器人，於 2022 年底推出。它基於大型語言模型（LLM），能以自然的對話方式回答問題、創作內容、編寫程式碼、翻譯及整理資料，具備強大的語境理解與生成能力。
 
-+ [ChatGPT](https://chatgpt.com/]
++ [ChatGPT](https://chatgpt.com/)
 	- [ChatGPT Pricing](https://chatgpt.com/zh-Hant/pricing/)
 
 As of March 2026, ChatGPT’s usage limits depend on your subscription tier. Different plans have different rolling message caps that affect how long and complex your conversations can be.
@@ -41,12 +42,45 @@ As of March 2026, ChatGPT’s usage limits depend on your subscription tier. Dif
 Free：$0 / month、10 messages every 5 hours、GPT-5.4 Thinking Access 1 message per day
 Plus：$20 / month、160 messages every 3 hours、GPT-5.4 Thinking Access Up to 3,000 messages per week
 
+以下為人工智慧代理人設定步驟：
+
+##### 獲取 OpenAI API 金鑰
+
+1. 前往 [OpenAI Platforms - API Keys](https://platform.openai.com/api-keys)。
+2. 選擇 "Create new secret key"。
+3. 複製 API Key 並妥善保存（這是免費的，但有每分鐘調用次數限制）。
+
+##### 替換 .env 參數
+
+對 ```.env``` 檔案中的下列參數，更換為 OpenAI API 金鑰。
+
+```
+OPENAI_API_KEY=user_provided
+```
+
 ### Gemini
 
 Gemini 是由 Google DeepMind 開發的先進多模態人工智慧模型（前身為 Bard），能同時理解文字、圖片、影片、音訊及程式碼，具備強大邏輯推理能力。它深度整合於 Google 生態系統（如 Gmail、Docs、Android），專為處理複雜任務、生成高品質內容及提升工作效率而設計。
 
 + [Gemini](https://gemini.google.com/app)
 	- [Gemini CLI: Quotas and pricing](https://geminicli.com/docs/resources/quota-and-pricing/)
+
+以下為人工智慧代理人設定步驟：
+
+##### 獲取 Google AI API 金鑰
+
+1. 前往 [Google AI Studio](https://aistudio.google.com/)。
+2. 點擊左側的 "Get API key"。
+3. 選擇 "Create API key in new project"。
+4. 複製 API Key 並妥善保存（這是免費的，但有每分鐘調用次數限制）。
+
+##### 替換 .env 參數
+
+對 ```.env``` 檔案中的下列參數，更換為 Google AI API 金鑰。
+
+```
+GOOGLE_KEY=user_provided
+```
 
 ### Claude
 
@@ -57,6 +91,22 @@ Claude 為 Anthropic 致力於打造安全且無害的人工智慧語言模型�
 
 Free：$0 / month
 Plus：$17 / month
+
+以下為人工智慧代理人設定步驟：
+
+##### 獲取 Claude AI API 金鑰
+
+1. 前往 [Claude Platforms - API Keys](https://platform.claude.com/settings/keys)。
+2. 選擇 "Create an API key"。
+3. 複製 API Key 並妥善保存（這是免費的，但有每分鐘調用次數限制）。
+
+##### 替換 .env 參數
+
+對 ```.env``` 檔案中的下列參數，更換為 Google AI API 金鑰。
+
+```
+ANTHROPIC_API_KEY=user_provided
+```
 
 ### GitHub Copilot
 
