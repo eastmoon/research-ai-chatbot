@@ -149,6 +149,46 @@ GitHub Copilot 是一款由 GitHub 與 OpenAI 共同開發的 AI 編程助手，
 	- [GitHub Copilot Pricing](https://github.com/features/copilot/plans)
 + [GitHub Copilot CLI 新手入門](https://copilot-cli-for-beginners.gh.miniasp.com/)
 
+以下為人工智慧代理人設定步驟：
 
-Free：$0 / month
-Plus：$10 / month
+##### 獲取 GitHub Copilot API 金鑰
+
+想要取得 GitHub Copilot 的 API，首先需要釐清你的需求。目前 GitHub 並沒有提供像 OpenAI 那樣單純「付費買 Token、呼叫 Completion 接口」的通用公開 API。
+
+目前最常見的方法是使用個人存取權杖 (PAT) 或透過代理工具模擬 OpenAI 的介面，因此，主要步驟如下：
+
+1. 取得 GitHub PAT： 前往 GitHub 設定頁面，建立一個具有 read:user 權限的 Personal Access Token (Classic)。
+2. 確定 API 位址： 如果你是使用開源轉發工具，地址通常是 http://localhost:8080/v1。
+
+**因為缺乏轉發服務，對 Copilot 的通訊並不會正常運作**
+
+##### 客製模型配置
+
+LibreChat 的自定義模組主要透過專案根目錄下的 [librechat.yml](./conf/devops/librechat.yml) 進行設定，其配置如下：
+
+```
+endpoints:
+  custom:
+    - name: "GitHub Copilot"
+      baseURL: "${COPILOT_API_SERVICE_URL}"
+      apiKey: "${COPILOT_API_KEY}"
+      models:
+        default: ["gpt-4", "gpt-3.5-turbo"]
+        fetch: true
+      titleConvo: true
+      modelDisplayLabel: "Copilot"
+```
+
+此外，為運用 librechat.yml 使用，需額外設定兩個檔案：
+
++ 配置 [docker-compose.override.yml](./conf/devops/docker-compose.override.yml)，確保 librechat.yml 掛載到 LibreChat 服務中。
++ 服務掛載入徑寫在檔案 ```./conf/devops/keys/CONFIG_PATH``` 中，在 ```do.bat up``` 時會自動覆蓋 ```.env``` 中的變數。
+
+##### 替換 .env 參數
+
+在本專案目錄 ```./conf/devops/keys``` 增加兩個參數檔案
+
++ ```COPILOT_API_SERVICE_URL```，提供 API 轉發服務
++ ```COPILOT_API_KEY```，提供 Github 的 PAT 權杖
+
+在 ```do.bat up``` 時會將參數添加至 ```.env``` 的末尾。

@@ -16,4 +16,4 @@ services:
      volumes:
      - type: bind
        source: ./librechat.yml
-       target: /app/librechat.yaml
+       target: /app/librechat.yml
