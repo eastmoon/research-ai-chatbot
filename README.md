@@ -11,11 +11,21 @@
 
 ## 聊天機器人 / 人工智慧代理人
 
++ [15 Best Open-Source Chatbot Platforms in 2026](https://pagergpt.ai/ai-chatbot/open-source-chatbot-platforms)
+
 ### Chatbot UI
 
 The open-source AI chat app for everyone.
 
 + [Chatbot UI](https://www.chatbotui.com/zh)
+
+放棄使用，由於 Chatbot UI 需要 Supabase 為基礎，但 Supabase 設計針對開發而非產品，且此開源有一段時間未更新，參考諸多設定在兩方軟體間有版本衝突。
+
+### LibreChat
+
+LibreChat brings together all your AI conversations in one unified, customizable interface
+
++ [LibreChat AI](https://www.librechat.ai/)
 
 ## 人工智慧模型
 
