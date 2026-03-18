@@ -158,10 +158,13 @@ goto end
     git fetch
     git pull
 
-    @rem Startup service
+    @rem Setting configuration file.
     cd %REPO_DIR%
     if EXIST .env (del .env)
     copy .env.example .env
+    docker run -ti --rm -v %REPO_DIR%:/repo -v %CLI_DIRECTORY%\conf\devops:/app -w /app bash -c "./main.sh"
+
+    @rem Startup service
     docker compose up -d
 
     goto end
