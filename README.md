@@ -58,6 +58,16 @@ Plus：$20 / month、160 messages every 3 hours、GPT-5.4 Thinking Access Up to 
 OPENAI_API_KEY=user_provided
 ```
 
+在本專案請將金鑰以寫在檔案 ```./conf/devops/keys/OPENAI_API_KEY``` 中，在 ```do.bat up``` 時會自動覆蓋 ```.env``` 中的變數。
+
+##### API 調用費用
+
+在 ChatGPT 的用戶計畫 ( 例如 Free plan ) 和 OpenAI API 是兩個完全獨立的系統，因此，Free Plan ≠ API 免費額度，沒有共用額度。
+
+而 ChatGPT 的 Free / Go / Plus / Pro 資費僅適用於 ChatGPT 網站和 App 應用程式，而 API 的使用是完全獨立計費的，採用單次 token 方式收費。
+
+在每百萬 tokens，於 GPT-5 mini 為 $0.25 輸入 / $2 輸出，GPT-5 為 $1.25 輸入 / $10 輸出。
+
 ### Gemini
 
 Gemini 是由 Google DeepMind 開發的先進多模態人工智慧模型（前身為 Bard），能同時理解文字、圖片、影片、音訊及程式碼，具備強大邏輯推理能力。它深度整合於 Google 生態系統（如 Gmail、Docs、Android），專為處理複雜任務、生成高品質內容及提升工作效率而設計。
@@ -82,15 +92,28 @@ Gemini 是由 Google DeepMind 開發的先進多模態人工智慧模型（前�
 GOOGLE_KEY=user_provided
 ```
 
+在本專案請將金鑰以寫在檔案 ```./conf/devops/keys/GOOGLE_KEY``` 中，在 ```do.bat up``` 時會自動覆蓋 ```.env``` 中的變數。
+
+##### API 調用費用
+
+在 Gemini 的用戶計畫 ( 例如 Free plan ) 和 Gemini API 是兩個完全獨立的系統，因此，Free Plan ≠ API 免費額度。
+
+而 Gemini 的訂閱方案僅適用 Gemini 網站、行動裝置應用程式、Google workspace 額外服務，而 API 的使用是完全獨立計費的，分為 Free Tier ( 免費層級 ) 與 Pay-as-you-go ( 付費層級 )。
+
+| 特性 | Free Tier (免費 API) | Pay-as-you-go (付費 API) |
+| :-: | :--- | :--- |
+| 數據隱私 | 你的輸入與輸出數據可能會被 Google 用於改進模型。 | 隱私保護。數據不會被用於訓練或改進模型。 |
+| 速率限制 | RPM 較低（ 約 2~15 次請求/分鐘，視模型而定 ）。| RPM 較高（ 通常從 150 RPM 起跳 ）。|
+| 每日限額 | RPD 有限制（例如 Gemini 2.5 Flash 約 250 次/天）。 | 無固定上限（ 按量計費 ）。|
+| 費用 | $0 | 按 Token 用量計費（例如 $0.1/1M tokens）。|
+| 模型權限 | 可使用大部分模型（Pro/Flash）。 | 可存取更高併發、無浮水印等進階功能。|
+
 ### Claude
 
 Claude 為 Anthropic 致力於打造安全且無害的人工智慧語言模型，採用獨家開發專利技術「合憲AI」，基於世界人權宣言（UDHR）與蘋果公司服務條款等法律框架，打造「人類不會害怕的AI」，在科技進步同時，也注重公平正義與隱私，主打創新價值觀並具可靠性讓使用者更安心。
 
 + [Claude.ai](http://claude.ai/)
 	- [Claude Pricing](https://claude.com/pricing)
-
-Free：$0 / month
-Plus：$17 / month
 
 以下為人工智慧代理人設定步驟：
 
@@ -107,6 +130,16 @@ Plus：$17 / month
 ```
 ANTHROPIC_API_KEY=user_provided
 ```
+
+在本專案請將金鑰以寫在檔案 ```./conf/devops/keys/ANTHROPIC_API_KEY``` 中，在 ```do.bat up``` 時會自動覆蓋 ```.env``` 中的變數。
+
+##### API 調用費用
+
+在 Claude.ai 的用戶計畫 ( 例如 Free plan ) 和 Claude API 是兩個完全獨立的系統，因此，Free Plan ≠ API 免費額度。
+
+而 Claude.ai 的 $20/月訂閱方案（Pro）僅適用於 Claude.ai 網站和 App 應用程式，而 API 的使用是完全獨立計費的，採用單次 token 方式收費。
+
+在每百萬 tokens，於 Claude Haiku 4.5 為 $1 輸入 / $5 輸出，Claude Sonnet 4.5 為 $3 輸入 / $15 輸出，Claude Opus 4.5 為 $5 輸入 / $25 輸出。
 
 ### GitHub Copilot
 
