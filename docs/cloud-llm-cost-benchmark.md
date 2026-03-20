@@ -1,6 +1,6 @@
 # 雲端大模型費用差異
 
-本文以 2026 年的 Google Gemini **「訂閱制 (Consumer/Business Subscriptions)」與「API 付費 (Developer API)」** 說明與討論。
+本文以 2026 年 Google Gemini 的 **「訂閱制 (Consumer/Business Subscriptions)」與「API 付費 (Developer API)」** 詢問 Gemini 而彙整的說明文件。
 
 ## 費用差異說明
 
